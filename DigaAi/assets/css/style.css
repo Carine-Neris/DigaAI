@@ -1,0 +1,61 @@
+/* padroes */
+@import url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap');
+* {
+    margin: 0;
+    font-family: 'Open Sans', sans-serif; 
+}
+input {
+    background: none;
+    border: 1px solid #323653;
+    width: 300px;
+    padding: 5px;
+}
+label {
+    margin-right: 0.35rem;
+}
+textarea {
+    background: none;
+    border: 1px solid #323653;
+}
+select {
+    background: none;
+    border: 1px solid #323653;
+    width: 200px;
+    padding: 5px;
+}
+
+/* definindo estilos */
+main {
+    display: flex;
+    justify-content: space-around;
+    height: 100vh;
+}
+section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+}
+button {
+    background: none;
+    border: 1px solid #323653;
+    width: 150px;
+    padding: 0.65rem;
+    border-radius: 2rem;
+    cursor: pointer;
+}
+button:hover {
+    background:#323653;
+    color: #fff;
+}
+.form {
+    background-color: rgb(250, 208, 44, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.form form div {
+    margin: 1rem 0;
+    display: flex;
+}
