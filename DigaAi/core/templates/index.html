@@ -1,22 +1,24 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="shortcut icon" href="{% static 'images/logo.ico' %}">
     <title>Diga aí</title>
 </head>
 <body>
     <main>
         <section>
-            <img src="./assets/images/logo.jpeg" alt="logo">
+            <img src="{% static 'images/logo.jpeg' %}" alt="logo">
         </section>
         <section class="form">
             <form>
                 <h3>Diga aí, pessoa arretada da peste</h3>
                 <div>
                     <label>Título:</label>
-                    <input type="text" name="titulo" olaceholder="Digite aqui" />
+                    <input type="text" name="titulo" placeholder="Digite aqui" />
                 </div>
                 <div>
                     <label>Nome:</label>
