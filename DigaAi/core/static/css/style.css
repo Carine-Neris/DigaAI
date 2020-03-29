@@ -24,19 +24,25 @@ select {
     padding: 5px;
 }
 
-/* definindo estilos */
-main {
+a:link {
+    text-decoration: none;
+}
+
+
+
+/* cadastro denuncias */
+.main-home, .main-cadastro {
     display: flex;
     justify-content: space-around;
     height: 100vh;
 }
-section {
+.main-cadastro section {
     display: flex;
     justify-content: center;
     align-items: center;
     width: 50%;
 }
-button {
+.main-cadastro button {
     background: none;
     border: 1px solid #323653;
     width: 150px;
@@ -44,7 +50,7 @@ button {
     border-radius: 2rem;
     cursor: pointer;
 }
-button:hover {
+.main-cadastro button:hover {
     background:#323653;
     color: #fff;
 }
@@ -58,4 +64,39 @@ button:hover {
 .form form div {
     margin: 1rem 0;
     display: flex;
+}
+
+
+
+/*home*/
+
+.main-home section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+}
+
+.main-home button {
+    padding: 1rem;
+    background: #323653;
+    color: #fff;
+    border: none;
+    width: 200px;
+    margin-bottom: 1rem;
+}
+
+.description {
+    color: #fff;
+    background-image: linear-gradient(rgba(250, 208, 44, 0.5), rgba(250, 208, 44, 0.5)) , url("../images/fundo.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.description p  {
+    max-width: 550px;
+}
+
+#denuncia{
+    color: white;
 }
