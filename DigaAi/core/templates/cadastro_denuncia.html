@@ -17,30 +17,38 @@
                 <h3>Diga aí, pessoa arretada da peste</h3>
                 <div>
                     <label>Título:</label>
-                    <input type="text" name="titulo" placeholder="Digite aqui" />
+                    {{form.titulo}}
                 </div>
                 <div>
-                    <label>Nome:</label>
-                    <input type="text" name="nome" />
+                    <label>Denuncia</label>
+                    {{form.texto_denuncia}}
                 </div>
                 <div>
-                    <label>Endereço:</label>
-                    <input type="text" name="endereco" />
+                    <label>Denunciante:</label>
+                    {{form.texto_denuncia}}
+                </div>
+                <div>
+                    <label>E_mail:</label>
+                    {{form.email}}
+                </div>
+                <div>
+                    <label>Endereço:</label><br>
+                    {{form.endereco}}
+                </div>
+                <div>
+                    <label>Bairro:</label><br>
+                    {{form.Bairro}}
+                </div>
+                <div>
+                    <label>Cidade:</label><br>
+                    {{form.cidade}}
                 </div>
                 <div>
                     <label>Departamento:</label>
-                    <select name="departamento">
-                        <option value="">-- Selecione --</option>
-                        <option value="">Celpe</option>
-                        <option value="">Detran</option>
-                        <option value="">Compesa</option>
-                    </select>
-                </div>
-                <div class="descricao">
-                    <label>Descrição:</label>
-                    <textarea name="descricao" cols="25" rows="3"></textarea>
+                        {{form.empresa}}
                 </div>
                 <button type="submit">Enviar</button>
+                <button type="submit"><a id="home" href="{% url 'home' %}">Voltar</a></button>
             </form>
         </section>
     </main>

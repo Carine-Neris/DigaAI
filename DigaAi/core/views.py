@@ -1,4 +1,6 @@
 from django.shortcuts import render
+from .models import Endereco, Denuncia, User, DptPublicos
+from .forms import DenunciaForm
 
 
 def home(request):
@@ -6,4 +8,6 @@ def home(request):
 
 
 def cadastro_denuncia(request):
-    return render(request, 'cadastro_denuncia.html')
+    form = DenunciaForm()
+
+    return render(request, 'cadastro_denuncia.html',{'form':form})
