@@ -8,6 +8,10 @@ def home(request):
 
 
 def cadastro_denuncia(request):
-    form = DenunciaForm()
-
+    if request.method == "POST":
+        form = DenunciaForm(request.POST)
+        if form.is_valid():
+            form.save()
+    else:
+        form = DenunciaForm()
     return render(request, 'cadastro_denuncia.html',{'form':form})

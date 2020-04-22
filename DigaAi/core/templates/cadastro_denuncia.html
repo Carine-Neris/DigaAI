@@ -13,42 +13,14 @@
             <img src="{% static 'images/logoform.jpeg' %}" alt="logo">
         </section>
         <section class="form">
-            <form>
+
+            <form method="POST" class="post-form">
+                {% csrf_token %}
                 <h3>Diga aí, pessoa arretada da peste</h3>
+                    {{ form.as_p }}
                 <div>
-                    <label>Título:</label>
-                    {{form.titulo}}
+                    <button type="submit" class="save btn btn-default">Salvar</button>
                 </div>
-                <div>
-                    <label>Denuncia</label>
-                    {{form.texto_denuncia}}
-                </div>
-                <div>
-                    <label>Denunciante:</label>
-                    {{form.texto_denuncia}}
-                </div>
-                <div>
-                    <label>E_mail:</label>
-                    {{form.email}}
-                </div>
-                <div>
-                    <label>Endereço:</label><br>
-                    {{form.endereco}}
-                </div>
-                <div>
-                    <label>Bairro:</label><br>
-                    {{form.Bairro}}
-                </div>
-                <div>
-                    <label>Cidade:</label><br>
-                    {{form.cidade}}
-                </div>
-                <div>
-                    <label>Departamento:</label>
-                        {{form.empresa}}
-                </div>
-                <button type="submit">Enviar</button>
-                <button type="submit"><a id="home" href="{% url 'home' %}">Voltar</a></button>
             </form>
         </section>
     </main>
