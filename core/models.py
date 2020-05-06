@@ -3,7 +3,7 @@ from django.db import models
 
 class User(models.Model):
     nome = models.CharField(max_length=50, null=False,blank=False)
-    cpf = models.CharField(max_length=15, null=False, blank=False)
+    cpf = models.CharField(max_length=11, null=False, blank=False)
     email = models.EmailField(max_length=50, null=False, blank=False)
     data_nascimento = models.DateField(null=False, blank=False)
 
