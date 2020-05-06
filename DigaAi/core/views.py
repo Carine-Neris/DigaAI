@@ -12,6 +12,6 @@ def cadastro_denuncia(request):
         form = DenunciaForm(request.POST)
         if form.is_valid():
             form.save()
-    else:
-        form = DenunciaForm()
+
+    form = DenunciaForm()
     return render(request, 'cadastro_denuncia.html',{'form':form})
