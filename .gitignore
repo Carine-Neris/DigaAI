@@ -1,4 +1,4 @@
-# Environments
+# Environmentsgit s
 
 .env 
 .venv 
@@ -8,3 +8,5 @@ ENV/
 env.bak/ 
 venv.bak/ 
 myvenv/
+.vscode/
+__pycache__/
