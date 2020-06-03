@@ -1,14 +1,11 @@
 from django import forms
-from .models import Denuncia, User, Endereco, DptPublicos
+from .models import Denuncia, DptPublico
 
 
 class DenunciaForm(forms.ModelForm):
-    titulo = forms.CharField(required=True,max_length=100,)
-    nome = forms.CharField(required=False, max_length=50, label="e-mail")
-    email = forms.EmailField()
+    titulo = forms.CharField(required=True, max_length=100,)
+    email = forms.EmailField(help_text="Opcional")
 
     class Meta:
         model = Denuncia
-        fields = '__all__'
-
-
+        fields = "__all__"

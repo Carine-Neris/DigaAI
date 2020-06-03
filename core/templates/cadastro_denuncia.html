@@ -1,28 +1,69 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
     <title>Diga aí</title>
-</head>
-<body>
+  </head>
+  <body>
     <main>
-        <section>
-            <img src="{% static 'images/logoform.jpeg' %}" alt="logo">
-        </section>
-        <section class="form">
-
-            <form method="POST" class="post-form">
-                {% csrf_token %}
-                <h3>Diga aí, pessoa arretada da peste</h3>
-                    {{ form.as_p }}
-                <div>
-                    <button type="submit" class="save btn btn-default">Salvar</button>
-                </div>
-            </form>
-        </section>
+      <section>
+        <img src="{% static 'images/logoform.jpeg' %}" alt="logo" />
+      </section>
+      <section class="form">
+        <form method="post" class="post-form">
+          {% csrf_token %}
+          <table>
+            <h3>Diga aí, pessoa arretada da peste</h3>
+            <tr>
+              <td>Departamento</td>
+              <td>{{ form.dpt_publico }}</td>
+            </tr>
+            <tr>
+              <td>Titulo Da Denuncia</td>
+              <td>{{ form.titulo }}</td>
+            </tr>
+            <tr>
+              <td>O que Aconteceu?</td>
+              <td>{{ form.texto_denuncia }}</td>
+            </tr>
+            <tr>
+              <td>Onde Aconteceu?</td>
+              <td>{{ form.endereco }}</td>
+            </tr>
+            <tr>
+              <td>Em que Bairro Aconteceu?</td>
+              <td>{{ form.bairro }}</td>
+            </tr>
+            <tr>
+              <td>Em que Cidade Aconteceu?</td>
+              <td>{{ form.cidade }}</td>
+            </tr>
+            {% if user.is_authenticated %}
+            <tr>
+              <td>Denunciante</td>
+              <td>{{ user.get_username }}</td>
+            </tr>
+            {% endif %}
+            <tr>
+              <td>E-mail</td>
+              <td>{{ form.email }}</td>
+            </tr>
+          </table>
+          <div>
+            <button type="submit" class="save btn btn-default">
+              Denunciar
+            </button>
+          </div>
+          <div>
+            <a id="denuncia" href="{% url 'home' %}">
+              <button type="submit">Home</button></a
+            >
+          </div>
+        </form>
+      </section>
     </main>
-</body>
+  </body>
 </html>

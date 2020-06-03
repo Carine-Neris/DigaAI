@@ -1,30 +1,54 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{% static 'css/home.css' %}">
-    <link rel="shortcut icon" href="{% static 'images/logo.ico' %}">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{% static 'css/home.css' %}" />
+    <link rel="shortcut icon" href="{% static 'images/logo.ico' %}" />
     <title>Diga Ai!</title>
-</head>
-<body>
+  </head>
+  <body>
     <main>
-        <section>
-            <img src="{% static 'images/logo-home.jpeg' %}" alt="logo">
-            <button>fazer login</button>
-            <button>cadastrar</button>
-            <button type="submit"><a id="denuncia" href="{% url 'cadastro_denuncia' %}">abrir reclamação</a></button>
-        </section>
-        <section class="description">
-            <p>
-                Você já teve dificuldade para fazer alguma denunciar? Nós vamos te ajudar!
-                Está plataforma tem o intuito de facilitar a interação da população com os órgãos para relatar infrações
-                e denunciar trazendo agilidade na resolução dos problemas preparados.
-            </p>
-        </section>
+      <section>
+        <div style="margin-left: -530px;">
+          {% if user.is_authenticated %}
+          <b> Diga Ai, </b> <i>{{ user.get_username }}!!</i>
+          {% endif %}
+        </div>
+        <img src="{% static 'images/logo-home.jpeg' %}" alt="logo" />
+        {% if user.is_authenticated %}
+        <button>cadastrar</button>
+        <button type="submit">
+          <a id="denuncia" href="{% url 'cadastro_denuncia' %}">
+            abrir reclamação
+          </a>
+        </button>
+        <button type="submit">
+          <a id="denuncia" href="{% url 'logout'%}?next={{request.path}}">
+            Logout
+          </a>
+        </button>
+        {% else %}
+        <button type="submit">
+          <a id="denuncia" href="{% url 'login' %}">fazer login</a>
+        </button>
+        <button>cadastrar</button>
+        <button type="submit">
+          <a id="denuncia" href="{% url 'cadastro_denuncia' %}"
+            >abrir reclamação</a
+          >
+        </button>
+        {% endif %}
+      </section>
+      <section class="description">
+        <p>
+          Você já teve dificuldade para fazer alguma denunciar? Nós vamos te
+          ajudar! Está plataforma tem o intuito de facilitar a interação da
+          população com os órgãos para relatar infrações e denunciar trazendo
+          agilidade na resolução dos problemas preparados.
+        </p>
+      </section>
     </main>
-</body>
+  </body>
 </html>
-
-
