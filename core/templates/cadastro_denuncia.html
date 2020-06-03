@@ -9,6 +9,16 @@
   </head>
   <body>
     <main>
+      <div
+        style="
+          background-color: #fcff14;
+          height: 27px;
+          font-size: large;
+          font-family: monospace;
+        "
+      >
+        <a id="denuncia" href="{% url 'home' %}"> Home</a>
+      </div>
       <section>
         <img src="{% static 'images/logoform.jpeg' %}" alt="logo" />
       </section>
@@ -56,11 +66,6 @@
             <button type="submit" class="save btn btn-default">
               Denunciar
             </button>
-          </div>
-          <div>
-            <a id="denuncia" href="{% url 'home' %}">
-              <button type="submit">Home</button></a
-            >
           </div>
         </form>
       </section>
