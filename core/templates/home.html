@@ -18,7 +18,7 @@
         </div>
         <img src="{% static 'images/logo-home.jpeg' %}" alt="logo" />
         {% if user.is_authenticated %}
-        <button>cadastrar</button>
+
         <button type="submit">
           <a id="denuncia" href="{% url 'cadastro_denuncia' %}">
             abrir reclamação
@@ -33,7 +33,11 @@
         <button type="submit">
           <a id="denuncia" href="{% url 'login' %}">fazer login</a>
         </button>
-        <button>cadastrar</button>
+        <button type="submit">
+          <a id="denuncia" href="{% url 'cadastro_user' %}">
+            Realizar Cadastro
+          </a>
+        </button>
         <button type="submit">
           <a id="denuncia" href="{% url 'cadastro_denuncia' %}"
             >abrir reclamação</a
