@@ -24,4 +24,4 @@ def cadastro_denuncia(request):
 class SignUp(generic.CreateView):
     form_class = FormUsuario
     sucess_url = reverse_lazy("login")
-    template_name = "registration/register.html"
+    template_name = "register.html"
