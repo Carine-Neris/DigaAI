@@ -1,4 +1,7 @@
 from django.shortcuts import render
+from django.contrib.auth.forms import UserCreationForm
+from django.urls import reverse_lazy
+from django.views import generic
 from .models import Denuncia, DptPublico
 from django.contrib.auth.models import User
 from .forms import DenunciaForm, FormUsuario
@@ -18,10 +21,7 @@ def cadastro_denuncia(request):
     return render(request, "cadastro_denuncia.html", {"form": form})
 
 
-def cadastro_user(request):
-    if request.method == "POST":
-        form = FormUsuario(request.POST)
-        if form.is_valid():
-            form.save()
-    form = FormUsuario()
-    return render(request, "cadastro_user.html", {"form": form})
+class SignUp(generic.CreateView):
+    form_class = FormUsuario
+    sucess_url = reverse_lazy("login")
+    template_name = "registration/register.html"
